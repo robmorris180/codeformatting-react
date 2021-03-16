@@ -6,12 +6,12 @@
   "scripts": {
     "start": "parcel src/index.html",
     "format": "prettier \"src/**/*.{js,html}\" --write",
-    "lint": "eslint \"src/**/*.{js}\" --quiet",
+    "lint": "eslint \"src/**/*.js\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint && git status",
+      "pre-commit": "npm run lint && npm run format && git status",
       "pre-push": "npm run test"
     }
   },
